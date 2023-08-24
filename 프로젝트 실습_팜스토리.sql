@@ -139,8 +139,14 @@ ALTER TABLE `Order` ADD COLUMN `orderEtc` VARCHAR(255) AFTER `orderTotal`;
 
 
 
+create user 'user'@'%' identified by 'Kangys98!!';
 
 
+grant all privileges ON `UserDB`.* to 'user'@'%';
+
+flush privileges;
 
 
+SELECT COUNT(*) FROM `order`;
 
+SELECT a.*, b.pName, b.thumb1 FROM `Order` AS a JOIN `Product` AS b ON a.orderProduct=b.pNo LIMIT 1, 10;
