@@ -150,3 +150,9 @@ flush privileges;
 SELECT COUNT(*) FROM `order`;
 
 SELECT a.*, b.pName, b.thumb1 FROM `Order` AS a JOIN `Product` AS b ON a.orderProduct=b.pNo LIMIT 1, 10;
+
+SELECT `name`, `gender`, `age`, `addr` FROM `User4`;
+
+UPDATE `User4` SET `gender`=?,`age`=?,`addr`='다대포' WHERE `name`='홍길동';
+
+SELECT `name`,`gender`,`age`,`addr` FROM `User4` WHERE `name`='홍길동';
