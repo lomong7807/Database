@@ -156,3 +156,31 @@ SELECT `name`, `gender`, `age`, `addr` FROM `User4`;
 UPDATE `User4` SET `gender`=?,`age`=?,`addr`='다대포' WHERE `name`='홍길동';
 
 SELECT `name`,`gender`,`age`,`addr` FROM `User4` WHERE `name`='홍길동';
+
+SELECT COUNT(*) FROM `User` WHERE `email`='lomong7807@gmail.com';
+
+SELECT MAX(`no`) FROM `Article`;
+
+SELECT a.*, b.nick FROM `Article` AS a JOIN `User` AS b ON a.writer = b.uid WHERE `parent`=0 ORDER BY `no` DESC;
+
+SELECT * FROM `Article` WHERE `no`=1;
+
+
+SELECT b.* FROM `Article` AS a
+JOIN `File` AS b
+ON a.`no`=b.ano
+WHERE b.ano=40;
+
+
+SELECT 
+
+INSERT INTO `Article` SET `parent`=1, `content`='테스트', `writer`='tester', `regip`=111, `rdate`=NOW();
+
+
+SELECT * FROM `Article` AS a
+left JOIN `File` AS b
+ON a.`no`=b.ano
+WHERE `no`=6;
+
+SELECT COUNT(*) FROM `Article`
+WHERE `parent`=0 AND `title` LIKE '%파일%';
