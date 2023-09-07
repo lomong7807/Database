@@ -167,7 +167,7 @@ SELECT * FROM `Article` WHERE `no`=1;
 
 
 SELECT b.* FROM `Article` AS a
-JOIN `File` AS b
+JOIN `file` AS b
 ON a.`no`=b.ano
 WHERE b.ano=40;
 
@@ -184,3 +184,10 @@ WHERE `no`=6;
 
 SELECT COUNT(*) FROM `Article`
 WHERE `parent`=0 AND `title` LIKE '%파일%';
+
+ALTER TABLE `file` ADD COLUMN `ano` VARCHAR(255) AFTER `fno`;
+ALTER TABLE `file` ADD COLUMN `download` VARCHAR(255) AFTER `sName`;
+
+SELECT a.*, b.nick FROM `Article` AS a JOIN `User` AS b ON a.writer=b.uid WHERE `no`=131;
+
+INSERT INTO `Article` SET `parent`=1, `content`='test', `writer`='a1002', `regip`='1111', `rdate`=NOW();
