@@ -191,3 +191,23 @@ ALTER TABLE `file` ADD COLUMN `download` VARCHAR(255) AFTER `sName`;
 SELECT a.*, b.nick FROM `Article` AS a JOIN `User` AS b ON a.writer=b.uid WHERE `no`=131;
 
 INSERT INTO `Article` SET `parent`=1, `content`='test', `writer`='a1002', `regip`='1111', `rdate`=NOW();
+
+SELECT 
+	b.orderNo,
+	a.pName,
+	a.price,
+	b.orderCount,
+	b.orderDelivery,
+	b.orderTotal,
+	c.nick,
+	b.orderDate
+FROM `Product` AS a
+JOIN `Order` AS b ON a.pNo=b.orderProduct
+JOIN `User` AS c ON b.orderUser=c.uid
+order BY `orderNo` desc LIMIT 3;
+
+SELECT * FROM `User`;
+
+SELECT `uid`,`name`,`nick`,`email`,`hp`,`role`,`zip`,`addr1`,`addr2`,`regip`,`regDate` FROM `User` Order BY `regDate` DESC LIMIT 3;
+
+SELECT * FROM `Product` ORDER BY `pNo` DESC LIMIT 3;
