@@ -211,3 +211,6 @@ SELECT * FROM `User`;
 SELECT `uid`,`name`,`nick`,`email`,`hp`,`role`,`zip`,`addr1`,`addr2`,`regip`,`regDate` FROM `User` Order BY `regDate` DESC LIMIT 3;
 
 SELECT * FROM `Product` ORDER BY `pNo` DESC LIMIT 3;
+
+CREATE DATABASE `Kmarket`;
+ 
